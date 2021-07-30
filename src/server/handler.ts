@@ -44,9 +44,13 @@ export const requestLoggerMiddleware =
     const { url, method, query } = ctx.request;
     const { logger } = serverContext;
     const remoteIp = getClientIp(ctx);
+    const start = Date.now();
 
-    logger.info({ method, query, remoteIp }, `Req > ${url}`);
     await next();
+    logger.info(
+      { method, query, remoteIp, endTimeMs: Date.now() - start },
+      `Req > ${url}`,
+    );
   };
 
 export const errorHandlerMiddleware = async (
