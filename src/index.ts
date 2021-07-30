@@ -1,6 +1,8 @@
 import pino from 'pino';
+import { fetchAndParse } from './fetcher/fetch';
 
-import { ApplicationConfig, Context, createServer } from './server/index';
+import { createServer } from './server/index';
+import { ApplicationConfig, Context } from './server/type';
 import { unsafeGet } from './utils';
 
 async function main() {
@@ -14,6 +16,7 @@ async function main() {
   const context: Context = {
     tokenConfig,
     logger,
+    fetchAndParseFn: fetchAndParse,
   };
   const server = createServer(context, {
     port,

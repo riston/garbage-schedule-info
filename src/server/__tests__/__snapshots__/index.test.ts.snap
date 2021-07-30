@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Server handler testing should return test config with valid token 1`] = `
+Array [
+  Object {
+    "frequency_in_days": 28,
+    "house": "Kuuse & Kadaka 18",
+    "next_visit_day": "2021-08-16T03:00:00.000+03:00",
+    "region": "Rakvere linn, Lääne-Viru maakond",
+    "service_type": "olmeprügi",
+  },
+]
+`;
