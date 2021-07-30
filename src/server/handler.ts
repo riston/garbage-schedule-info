@@ -5,7 +5,6 @@ import Koa from 'koa';
 import * as D from 'io-ts/Decoder';
 import * as E from 'fp-ts/lib/Either';
 import { Context } from './type';
-import { fetchAndParse } from '../fetcher/fetch';
 import { pipe } from 'fp-ts/lib/function';
 
 interface ValidationParams {
